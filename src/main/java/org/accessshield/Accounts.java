@@ -1,11 +1,11 @@
 package org.accessshield;
 
-import InputValidation.ControlLimitCharacters;
-import InputValidation.SetValueType;
-import core.AccountStatus;
-import core.AccountsUtil;
-import core.EmailProvider;
+//import Entities.Account;
+import Entities.Account;
+import InputValidation.*;
+import core.*;
 import java.awt.Color;
+import javax.persistence.*;
 
 /**
  *
@@ -22,6 +22,15 @@ public final class Accounts extends javax.swing.JFrame {
         initComponents();
         ValidationInput();
         initWindow(AccountStatus.SIGNIN);
+        
+        /* this statement is used only for testing purpose */
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("org_AccessShield_jar_1.0-SNAPSHOTPU");
+        EntityManager em = emf.createEntityManager();
+        try {
+            System.out.println(em.find(Account.class, 1));  // Căutăm contul după ID
+        } finally {
+            em.close();
+        }
     }
     
     public void ValidationInput()
