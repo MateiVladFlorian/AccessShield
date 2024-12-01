@@ -27,7 +27,7 @@ public final class Accounts extends javax.swing.JFrame {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("org_AccessShield_jar_1.0-SNAPSHOTPU");
         EntityManager em = emf.createEntityManager();
         try {
-            System.out.println(em.find(Account.class, 1));  // Căutăm contul după ID
+            System.out.println(em.find(Account.class, 1));
         } finally {
             em.close();
         }
