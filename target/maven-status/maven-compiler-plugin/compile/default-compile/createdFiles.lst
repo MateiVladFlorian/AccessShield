@@ -2,6 +2,7 @@ Entities/Staff.class
 Entities/BillingInfo_.class
 Entities/BillingInfo.class
 Entities/Reservations.class
+org/accessshield/Accounts$7.class
 Entities/Payments_.class
 Entities/AuditLogs_.class
 org/accessshield/Accounts.class
@@ -42,6 +43,7 @@ Entities/UsersRoles.class
 Entities/MaintenanceLogs_.class
 Entities/EventLogs_.class
 Entities/RoomAccessCards_.class
+core/ManagerEntities.class
 Entities/StaffRoles.class
 Entities/Rooms.class
 Entities/UsersSessions.class
@@ -52,6 +54,7 @@ org/accessshield/Accounts$5.class
 Entities/Reservations_.class
 Entities/Promotions.class
 Entities/Notifications.class
+core/SetupPersistence.class
 core/AccountStatus.class
 Entities/UsersRoles_.class
 Entities/Reviews_.class

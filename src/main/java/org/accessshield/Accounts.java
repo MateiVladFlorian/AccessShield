@@ -5,6 +5,9 @@ import Entities.Account;
 import InputValidation.*;
 import core.*;
 import java.awt.Color;
+import java.time.LocalDateTime;
+import java.util.Date;
+import java.util.List;
 import javax.persistence.*;
 
 /**
@@ -14,23 +17,19 @@ import javax.persistence.*;
 public final class Accounts extends javax.swing.JFrame {
     private String[] labels;
     private int code;
-    /**
-     * Creates new form Accounts
-     */
+    
+    private Account account;
+    private ManagerEntities em;
+    private Date datetimeconnected;
     
     public Accounts() {
         initComponents();
         ValidationInput();
         initWindow(AccountStatus.SIGNIN);
         
-        /* this statement is used only for testing purpose */
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("org_AccessShield_jar_1.0-SNAPSHOTPU");
-        EntityManager em = emf.createEntityManager();
-        try {
-            System.out.println(em.find(Account.class, 1));
-        } finally {
-            em.close();
-        }
+        account = new Account();
+        em = new ManagerEntities("org_AccessShield_jar_1.0-SNAPSHOTPU");
+        datetimeconnected = new Date();
     }
     
     public void ValidationInput()
@@ -88,7 +87,7 @@ public final class Accounts extends javax.swing.JFrame {
         NewPassword = new javax.swing.JPasswordField();
         Password = new javax.swing.JPasswordField();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        signup = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         EmailAddress = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
@@ -212,7 +211,12 @@ public final class Accounts extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setText("Sign up");
+        signup.setText("Sign up");
+        signup.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                signupActionPerformed(evt);
+            }
+        });
 
         jLabel7.setText("Address:");
 
@@ -256,7 +260,7 @@ public final class Accounts extends javax.swing.JFrame {
                                     .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(202, 202, 202)
-                        .addComponent(jButton5)
+                        .addComponent(signup)
                         .addGap(46, 46, 46)
                         .addComponent(jButton4)))
                 .addGap(143, 143, Short.MAX_VALUE))
@@ -291,7 +295,7 @@ public final class Accounts extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(signup))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
@@ -429,6 +433,21 @@ public final class Accounts extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_resetActionPerformed
 
+    private void signupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signupActionPerformed
+        account.setUsername(Username.getText());
+        account.setEmail(EmailAddress.getText());
+        account.setPassword(AccountsUtil.GenerateSHA512(new String(Password.getPassword())));
+        account.setCnp(cnp.getText());
+        account.setLocation(Location.getText());
+        account.setStatus("inactiv");
+        account.setDatetimeconnected(datetimeconnected);
+        
+        em.BeginDataTransaction();     
+        em.InsertData(account);
+        em.UpdateDataTransaction();
+        em.EndDataTransaction();
+    }//GEN-LAST:event_signupActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -468,7 +487,6 @@ public final class Accounts extends javax.swing.JFrame {
     private javax.swing.JTextField email;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -491,6 +509,7 @@ public final class Accounts extends javax.swing.JFrame {
     private javax.swing.JLabel recover;
     private javax.swing.JButton register;
     private javax.swing.JButton reset;
+    private javax.swing.JButton signup;
     private javax.swing.JTextField user;
     private javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables

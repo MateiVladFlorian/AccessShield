@@ -4,6 +4,7 @@
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/AccessLogs.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/MaintenanceLogs.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/core/AccountStatus.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/core/ManagerEntities.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/AuditLogs.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/InputValidation/ControlLimitCharacters.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/org/accessshield/AccessShield.java
@@ -23,6 +24,7 @@
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Staff.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Notifications.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/BillingInfo.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/core/SetupPersistence.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Feedback.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/UsersRoles.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/UsersSessions.java

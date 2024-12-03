@@ -30,10 +30,10 @@
     <class>Entities.Transactions</class>
     <class>Entities.Notifications</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/accesscontrol"/>
-      <property name="javax.persistence.jdbc.user" value="postgres"/>
+      <property name="javax.persistence.jdbc.url" value="${DB_URL}"/>
+      <property name="javax.persistence.jdbc.user" value="${DB_USER}"/>
       <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="1WERFDCVVCTsf234"/>
+      <property name="javax.persistence.jdbc.password" value="${DB_PASSWORD}"/>
     </properties>
   </persistence-unit>
 </persistence>
