@@ -29,6 +29,12 @@
     <class>Entities.StaffRoles</class>
     <class>Entities.Transactions</class>
     <class>Entities.Notifications</class>
+    <class>Entities.AccessDevices</class>
+    <class>Entities.TransactionAuditLogs</class>
+    <class>Entities.PaymentGateways</class>
+    <class>Entities.BiometricData</class>
+    <class>Entities.NotificationEvents</class>
+    <class>Entities.Registeredid</class>
     <properties>
       <property name="javax.persistence.jdbc.url" value="${DB_URL}"/>
       <property name="javax.persistence.jdbc.user" value="${DB_USER}"/>

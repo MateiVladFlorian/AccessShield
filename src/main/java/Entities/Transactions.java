@@ -56,6 +56,12 @@ public class Transactions implements Serializable {
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Account accountId;
+    @JoinColumn(name = "gateway_id", referencedColumnName = "gateway_id")
+    @ManyToOne(optional = false)
+    private PaymentGateways gatewayId;
+    @JoinColumn(name = "audit_id", referencedColumnName = "audit_id")
+    @ManyToOne(optional = false)
+    private TransactionAuditLogs auditId;
 
     public Transactions() {
     }
@@ -115,6 +121,22 @@ public class Transactions implements Serializable {
 
     public void setAccountId(Account accountId) {
         this.accountId = accountId;
+    }
+
+    public PaymentGateways getGatewayId() {
+        return gatewayId;
+    }
+
+    public void setGatewayId(PaymentGateways gatewayId) {
+        this.gatewayId = gatewayId;
+    }
+
+    public TransactionAuditLogs getAuditId() {
+        return auditId;
+    }
+
+    public void setAuditId(TransactionAuditLogs auditId) {
+        this.auditId = auditId;
     }
 
     @Override

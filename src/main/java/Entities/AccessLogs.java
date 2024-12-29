@@ -56,6 +56,9 @@ public class AccessLogs implements Serializable {
     private boolean accessGranted;
     @Column(name = "status")
     private String status;
+    @JoinColumn(name = "device_id", referencedColumnName = "device_id")
+    @ManyToOne(optional = false)
+    private AccessDevices deviceId;
     @JoinColumn(name = "access_id", referencedColumnName = "access_id")
     @ManyToOne(optional = false)
     private AccessRoom accessId;
@@ -122,6 +125,14 @@ public class AccessLogs implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public AccessDevices getDeviceId() {
+        return deviceId;
+    }
+
+    public void setDeviceId(AccessDevices deviceId) {
+        this.deviceId = deviceId;
     }
 
     public AccessRoom getAccessId() {

@@ -4,6 +4,7 @@ import Entities.AccessLogs;
 import Entities.AccessRoom;
 import Entities.AuditLogs;
 import Entities.BillingInfo;
+import Entities.BiometricData;
 import Entities.Feedback;
 import Entities.Notifications;
 import Entities.Payments;
@@ -15,6 +16,7 @@ import Entities.Reviews;
 import Entities.RoomAccessCards;
 import Entities.SecurityLogs;
 import Entities.Staff;
+import Entities.TransactionAuditLogs;
 import Entities.Transactions;
 import Entities.UsersRoles;
 import Entities.UsersSessions;
@@ -24,7 +26,7 @@ import javax.persistence.metamodel.CollectionAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2024-12-03T03:20:14", comments="EclipseLink-2.7.12.v20230209-rNA")
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2024-12-29T18:32:02", comments="EclipseLink-2.7.12.v20230209-rNA")
 @StaticMetamodel(Account.class)
 public class Account_ { 
 
@@ -46,6 +48,8 @@ public class Account_ {
     public static volatile CollectionAttribute<Account, UsersRoles> usersRolesCollection;
     public static volatile CollectionAttribute<Account, Promotions> promotionsCollection;
     public static volatile SingularAttribute<Account, String> cnp;
+    public static volatile CollectionAttribute<Account, TransactionAuditLogs> transactionAuditLogsCollection;
+    public static volatile CollectionAttribute<Account, BiometricData> biometricDataCollection;
     public static volatile SingularAttribute<Account, Date> datetimeconnected;
     public static volatile CollectionAttribute<Account, Payments> paymentsCollection;
     public static volatile CollectionAttribute<Account, SecurityLogs> securityLogsCollection;

@@ -60,6 +60,9 @@ public class Payments implements Serializable {
     @JoinColumn(name = "reservation_id", referencedColumnName = "reservation_id")
     @ManyToOne(optional = false)
     private Reservations reservationId;
+    @JoinColumn(name = "audit_id", referencedColumnName = "audit_id")
+    @ManyToOne(optional = false)
+    private TransactionAuditLogs auditId;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "paymentId")
     private Collection<PaymentMethods> paymentMethodsCollection;
 
@@ -122,6 +125,14 @@ public class Payments implements Serializable {
 
     public void setReservationId(Reservations reservationId) {
         this.reservationId = reservationId;
+    }
+
+    public TransactionAuditLogs getAuditId() {
+        return auditId;
+    }
+
+    public void setAuditId(TransactionAuditLogs auditId) {
+        this.auditId = auditId;
     }
 
     public Collection<PaymentMethods> getPaymentMethodsCollection() {

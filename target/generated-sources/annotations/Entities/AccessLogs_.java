@@ -1,5 +1,6 @@
 package Entities;
 
+import Entities.AccessDevices;
 import Entities.AccessRoom;
 import Entities.Account;
 import java.util.Date;
@@ -7,7 +8,7 @@ import javax.annotation.processing.Generated;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2024-12-03T03:20:14", comments="EclipseLink-2.7.12.v20230209-rNA")
+@Generated(value="org.eclipse.persistence.internal.jpa.modelgen.CanonicalModelProcessor", date="2024-12-29T18:32:02", comments="EclipseLink-2.7.12.v20230209-rNA")
 @StaticMetamodel(AccessLogs.class)
 public class AccessLogs_ { 
 
@@ -17,6 +18,7 @@ public class AccessLogs_ {
     public static volatile SingularAttribute<AccessLogs, Boolean> accessGranted;
     public static volatile SingularAttribute<AccessLogs, Integer> logId;
     public static volatile SingularAttribute<AccessLogs, String> location;
+    public static volatile SingularAttribute<AccessLogs, AccessDevices> deviceId;
     public static volatile SingularAttribute<AccessLogs, Date> accessTime;
     public static volatile SingularAttribute<AccessLogs, String> status;
 

@@ -5,6 +5,7 @@
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/MaintenanceLogs.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/core/AccountStatus.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/core/ManagerEntities.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/AccountsManager/RegisterModel.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/AuditLogs.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/InputValidation/ControlLimitCharacters.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/org/accessshield/AccessShield.java
@@ -17,7 +18,10 @@
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Account.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Promotions.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/org/accessshield/Accounts.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/AccountsManager/ResetModel.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/ManagerIdEntities/RegisteredId.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/PaymentMethods.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/NotificationEvents.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/ReservationsHistory.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/InputValidation/SetValueType.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Rooms.java
@@ -25,11 +29,18 @@
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Notifications.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/BillingInfo.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/core/SetupPersistence.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/BiometricData.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Feedback.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/UsersRoles.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/UsersSessions.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Registeredid.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/TransactionAuditLogs.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/SecurityLogs.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/ApplicationManager/ManagerHousing.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/AccessDevices.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/PaymentGateways.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/core/AccountsUtil.java
+/home/vlad/NetBeansProjects/AccessShield/src/main/java/AccountsManager/LoginModel.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Payments.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Amenities.java
 /home/vlad/NetBeansProjects/AccessShield/src/main/java/Entities/Professionalfield.java

@@ -5,8 +5,10 @@
 package Entities;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.Date;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +18,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -54,9 +57,13 @@ public class BillingInfo implements Serializable {
     @Column(name = "expiry_date")
     @Temporal(TemporalType.DATE)
     private Date expiryDate;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "billingId")
+    private Collection<TransactionAuditLogs> transactionAuditLogsCollection;
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Account accountId;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "billingId")
+    private Collection<Reservations> reservationsCollection;
 
     public BillingInfo() {
     }
@@ -113,12 +120,28 @@ public class BillingInfo implements Serializable {
         this.expiryDate = expiryDate;
     }
 
+    public Collection<TransactionAuditLogs> getTransactionAuditLogsCollection() {
+        return transactionAuditLogsCollection;
+    }
+
+    public void setTransactionAuditLogsCollection(Collection<TransactionAuditLogs> transactionAuditLogsCollection) {
+        this.transactionAuditLogsCollection = transactionAuditLogsCollection;
+    }
+
     public Account getAccountId() {
         return accountId;
     }
 
     public void setAccountId(Account accountId) {
         this.accountId = accountId;
+    }
+
+    public Collection<Reservations> getReservationsCollection() {
+        return reservationsCollection;
+    }
+
+    public void setReservationsCollection(Collection<Reservations> reservationsCollection) {
+        this.reservationsCollection = reservationsCollection;
     }
 
     @Override

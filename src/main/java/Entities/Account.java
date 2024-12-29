@@ -1,3 +1,7 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
 package Entities;
 
 import java.io.Serializable;
@@ -60,8 +64,12 @@ public class Account implements Serializable {
     @Column(name = "datetimeconnected")
     @Temporal(TemporalType.TIMESTAMP)
     private Date datetimeconnected;
+    @OneToMany(mappedBy = "accountId")
+    private Collection<BiometricData> biometricDataCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
     private Collection<ReservationsHistory> reservationsHistoryCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "performedBy")
+    private Collection<TransactionAuditLogs> transactionAuditLogsCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
     private Collection<Payments> paymentsCollection;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "accountId")
@@ -176,12 +184,28 @@ public class Account implements Serializable {
         this.datetimeconnected = datetimeconnected;
     }
 
+    public Collection<BiometricData> getBiometricDataCollection() {
+        return biometricDataCollection;
+    }
+
+    public void setBiometricDataCollection(Collection<BiometricData> biometricDataCollection) {
+        this.biometricDataCollection = biometricDataCollection;
+    }
+
     public Collection<ReservationsHistory> getReservationsHistoryCollection() {
         return reservationsHistoryCollection;
     }
 
     public void setReservationsHistoryCollection(Collection<ReservationsHistory> reservationsHistoryCollection) {
         this.reservationsHistoryCollection = reservationsHistoryCollection;
+    }
+
+    public Collection<TransactionAuditLogs> getTransactionAuditLogsCollection() {
+        return transactionAuditLogsCollection;
+    }
+
+    public void setTransactionAuditLogsCollection(Collection<TransactionAuditLogs> transactionAuditLogsCollection) {
+        this.transactionAuditLogsCollection = transactionAuditLogsCollection;
     }
 
     public Collection<Payments> getPaymentsCollection() {

@@ -67,6 +67,9 @@ public class Reservations implements Serializable {
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Account accountId;
+    @JoinColumn(name = "billing_id", referencedColumnName = "billing_id")
+    @ManyToOne(optional = false)
+    private BillingInfo billingId;
     @JoinColumn(name = "room_id", referencedColumnName = "room_id")
     @ManyToOne(optional = false)
     private Rooms roomId;
@@ -163,6 +166,14 @@ public class Reservations implements Serializable {
 
     public void setAccountId(Account accountId) {
         this.accountId = accountId;
+    }
+
+    public BillingInfo getBillingId() {
+        return billingId;
+    }
+
+    public void setBillingId(BillingInfo billingId) {
+        this.billingId = billingId;
     }
 
     public Rooms getRoomId() {

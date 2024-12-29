@@ -54,6 +54,9 @@ public class Notifications implements Serializable {
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Account accountId;
+    @JoinColumn(name = "event_id", referencedColumnName = "event_id")
+    @ManyToOne(optional = false)
+    private NotificationEvents eventId;
 
     public Notifications() {
     }
@@ -113,6 +116,14 @@ public class Notifications implements Serializable {
 
     public void setAccountId(Account accountId) {
         this.accountId = accountId;
+    }
+
+    public NotificationEvents getEventId() {
+        return eventId;
+    }
+
+    public void setEventId(NotificationEvents eventId) {
+        this.eventId = eventId;
     }
 
     @Override

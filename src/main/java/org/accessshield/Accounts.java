@@ -18,9 +18,9 @@ public final class Accounts extends javax.swing.JFrame {
     private String[] labels;
     private int code;
     
-    private Account account;
-    private ManagerEntities em;
-    private Date datetimeconnected;
+    private final Account account;
+    private final ManagerEntities em;
+    private final Date datetimeconnected;
     
     public Accounts() {
         initComponents();
